@@ -42,5 +42,51 @@ var pick1 = _.pick(obj,(val,key,obj) => {
 console.log('pick:',pick,pick1);
 /*todo omit _.omit(object, *keys) pick的相反功能 */
 /*todo defaults _.defaults(object, *defaults)  */
+var defaults = _.defaults({name:'eb'},{name:'qwd',age:23});//todo 将后面的对象属性合并到第一个对象中，如果已存在这不进行合并。
+console.log('defaults:',defaults);
+/*todo clone _.clone(object) */
+var clone = _.clone(obj);//todo 克隆指定对象的属性引用(浅度复制)
+console.log('clone:',clone);
+/*todo tap _.tap(object, interceptor) */
+var tap = _.tap(obj,function (obj) {//todo 返回对象本身。
+    return _.defaults(obj,{a:123});
+});
+console.log('tap',tap);
+/*todo has _.has(object, key) */
+var has = _.has(obj,'name');//todo 判断对象是否含有指定key。
+console.log('has:',has);
+/*todo _.property(key) */
+var property = _.property('name')(obj);//todo 返回指定对象的指定属性的属性值
+console.log('property:',property);
+/*todo propertyOf _.propertyOf(object) */
+var propertyOf = _.propertyOf(obj)('name');
+console.log('propertyOf:',propertyOf);
+/*todo matcher _.matcher(attrs) */
+var matcher = _.matcher('name');//todo 断言函数
+console.log('matcher:',matcher);
+/*todo isEqual _.isEqual(object, other) */
+var  isEqual = _.isEqual({name:'eb'},{name:'eb'});//todo 判断两个对象是否应该相等。
+console.log('isEqual:',{name:'eb'} === {name:'eb'},isEqual);
+/*todo isMatch _.isMatch(object, properties) */
+var isMatch = _.isMatch(obj,{name:'qwd'});
+console.log('isMatch:',isMatch);
+/*todo isEmpty _.isEmpty(object) 判断对象是否为空*/
+/*todo isElement _.isElement(object) 判断指定对象是否为Dom*/
+/*todo isArray _.isArray(arr) 判断是否为数组*/
+/*todo isObject _.isObject(object) 判断是否为对象*/
+/*todo isArguments _.isArguments(object) 判断是否为函数参数对象*/
+/*todo isFunction _.isFunction(fn) 判断是否为函数对象*/
+/*todo isString _.isString(val) 判断是否为字符串*/
+/*todo isNumber _.isNumber(val) 判断是否为数字*/
+/*todo isFinite _.isFinite(val) 判断是否有限*/
+/*todo isBoolean _.isBoolean(val) 判断是否为布尔值*/
+/*todo isDate _.isDate(val) 判断是否为日期*/
+/*todo isRegExp _.isRegExp(val) 判断是否为正则表达式*/
+/*todo isError _.isError(val) 判断是否为Error对象*/
+/*todo isNaN _.isNaN(val) 判断是否为NaN*/
+/*todo isNull _.isNull_(val) 判断是否为空*/
+/*todo isUndefined _.isUndefined(val) 判断是否为undefined*/
+
+
 
 
